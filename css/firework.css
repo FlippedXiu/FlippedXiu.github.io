@@ -23,6 +23,12 @@ h1 {
     overflow: hidden;
 }
 
+input {
+    font-size: 58px;
+    width: 200px; /* 设置输入框宽度，根据需要调整 */
+    /* 其他样式，比如边框、内边距等 */
+}
+
 span.pen {
     position: relative;
     display: inline-block;
