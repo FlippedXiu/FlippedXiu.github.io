@@ -7,64 +7,70 @@
     <link rel="stylesheet" href="./css/firework.css">
 </head>
 <body>
-    <!-- 文字部分 -->
-    <canvas></canvas>
-    <div>
-        <h1>
-            <form id="myForm">
-                <label for="name">告诉我你的名字吧，会给你带来好运:</label>
-                <input type="text" id="name" name="name" required>
-                <input type="submit" value="提交">
-            </form>
-            <span class="pen" id="conditionalContent" style="display: none;">你是大傻逼</span>
-            <span class="pen" id="conditionalContent_auth" style="display: none;">就知道你小子没安好心，被骂了来输我名字</span>
-        </h1>
-    </div>
+<!-- 文字部分 -->
+<canvas></canvas>
+<div>
+    <h1>
+        <form id="myForm">
+            <label for="name">告诉我你的名字吧，会给你带来好运:</label>
+            <input type="text" id="name" name="name" required>
+            <input type="submit" value="提交">
+        </form>
+        <span class="pen" id="conditionalContent" style="display: none;">你是大傻逼</span>
+        <span class="pen" id="conditionalContent_auth" style="display: none;">就知道你小子没安好心，被骂了来输我名字</span>
+    </h1>
+</div>
 
+<!-- partial -->
+<script src="./js/firework.js"></script>
 
-    <!-- partial -->
-    <script src="./js/firework.js"></script>
-</body>
+<!-- JavaScript 代码 -->
 <script>
-    var flag = false;
-    var flag_auth = false;
-    var myForm = document.getElementById('myForm');
-    var nameInput = document.getElementById('name');
-    var conditionalContent = document.getElementById('conditionalContent');
-    var conditionalContent_auth = document.getElementById('conditionalContent_auth');
-    var inputName = '';
-    // 添加事件监听器，监听表单的提交事件
-    myForm.addEventListener('submit', function(event) {
-        // 阻止表单的默认提交行为
-        event.preventDefault();
-        var inputValue = document.getElementById('name').value;
-        inputName = inputValue;
-        if (inputValue === '徐骏修' || inputValue === 'xjx' || inputValue === 'Xjx' || inputValue === 'XJX' || inputValue === 'xujunxiu' || inputValue === 'XUJUNXIU' || inputValue === 'Xujunxiu' || inputValue === 'XUjunxiu'
-            || inputValue === '张乐言' || inputValue === 'zly' || inputValue === 'ZLY' || inputValue === 'Zly' || inputValue === 'Zhangleyan' || inputValue === 'ZHANGLEYAN' || inputValue === 'ZHANGleyan' || inputValue === 'zhangleyan') {
-            flag_auth = true;
-        } else if (inputValue !== null) {
-            flag = true;
-        } else {
-            alert("输名字！大傻逼")
-        }
-        // 根据条件设置元素的显示和隐藏
-        if (flag) {
-            conditionalContent.style.display = 'block'; // 显示元素
-        } else {
-            conditionalContent.style.display = 'none'; // 隐藏元素
-        }
-        if (flag_auth) {
-            conditionalContent_auth.style.display = 'block'; // 显示元素
-        } else {
-            conditionalContent_auth.style.display = 'none'; // 隐藏元素
-        }
-    });
-    nameInput.addEventListener('input', function() {
-        // 当输入框的值变化时，隐藏两个 <span> 元素
-        conditionalContent.style.display = 'none';
-        conditionalContent_auth.style.display = 'none';
-        flag_auth = false;
-        flag = false
+    document.addEventListener('DOMContentLoaded', function() {
+        var flag = false;
+        var flag_auth = false;
+        var myForm = document.getElementById('myForm');
+        var nameInput = document.getElementById('name');
+        var conditionalContent = document.getElementById('conditionalContent');
+        var conditionalContent_auth = document.getElementById('conditionalContent_auth');
+        var inputName = '';
+
+        // 添加事件监听器，监听表单的提交事件
+        myForm.addEventListener('submit', function(event) {
+            // 阻止表单的默认提交行为
+            event.preventDefault();
+            var inputValue = document.getElementById('name').value;
+            inputName = inputValue;
+            if (inputValue === '徐骏修' || inputValue === 'xjx' || inputValue === 'Xjx' || inputValue === 'XJX' || inputValue === 'xujunxiu' || inputValue === 'XUJUNXIU' || inputValue === 'Xujunxiu' || inputValue === 'XUjunxiu'
+                || inputValue === '张乐言' || inputValue === 'zly' || inputValue === 'ZLY' || inputValue === 'Zly' || inputValue === 'Zhangleyan' || inputValue === 'ZHANGLEYAN' || inputValue === 'ZHANGleyan' || inputValue === 'zhangleyan') {
+                flag_auth = true;
+            } else if (inputValue !== null) {
+                flag = true;
+            } else {
+                alert("输名字！大傻逼")
+            }
+            // 根据条件设置元素的显示和隐藏
+            if (flag) {
+                conditionalContent.style.display = 'block'; // 显示元素
+            } else {
+                conditionalContent.style.display = 'none'; // 隐藏元素
+            }
+            if (flag_auth) {
+                conditionalContent_auth.style.display = 'block'; // 显示元素
+            } else {
+                conditionalContent_auth.style.display = 'none'; // 隐藏元素
+            }
+        });
+
+        // 添加事件监听器，监听输入框的变化
+        nameInput.addEventListener('input', function() {
+            // 当输入框的值变化时，隐藏两个 <span> 元素
+            conditionalContent.style.display = 'none';
+            conditionalContent_auth.style.display = 'none';
+            flag_auth = false;
+            flag = false
+        });
     });
 </script>
+</body>
 </html>
