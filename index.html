@@ -61,10 +61,8 @@
     });
     nameInput.addEventListener('input', function() {
         // 当输入框的值变化时，隐藏两个 <span> 元素
-        if (inputName === null) {
-            conditionalContent.style.display = 'none';
-            conditionalContent_auth.style.display = 'none';
-        }
+        conditionalContent.style.display = 'none';
+        conditionalContent_auth.style.display = 'none';
         flag_auth = false;
         flag = false
     });
