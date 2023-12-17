@@ -32,11 +32,13 @@
     var nameInput = document.getElementById('name');
     var conditionalContent = document.getElementById('conditionalContent');
     var conditionalContent_auth = document.getElementById('conditionalContent_auth');
+    var inputName = '';
     // 添加事件监听器，监听表单的提交事件
     myForm.addEventListener('submit', function(event) {
         // 阻止表单的默认提交行为
         event.preventDefault();
         var inputValue = document.getElementById('name').value;
+        inputName = inputValue;
         if (inputValue === '徐骏修' || inputValue === 'xjx' || inputValue === 'Xjx' || inputValue === 'XJX' || inputValue === 'xujunxiu' || inputValue === 'XUJUNXIU' || inputValue === 'Xujunxiu' || inputValue === 'XUjunxiu'
             || inputValue === '张乐言' || inputValue === 'zly' || inputValue === 'ZLY' || inputValue === 'Zly' || inputValue === 'Zhangleyan' || inputValue === 'ZHANGLEYAN' || inputValue === 'ZHANGleyan' || inputValue === 'zhangleyan') {
             flag_auth = true;
@@ -59,8 +61,10 @@
     });
     nameInput.addEventListener('input', function() {
         // 当输入框的值变化时，隐藏两个 <span> 元素
-        conditionalContent.style.display = 'none';
-        conditionalContent_auth.style.display = 'none';
+        if (inputName === null) {
+            conditionalContent.style.display = 'none';
+            conditionalContent_auth.style.display = 'none';
+        }
     });
 </script>
 </html>
