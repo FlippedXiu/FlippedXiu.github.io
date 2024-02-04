@@ -171,7 +171,7 @@ S.UI = (function () {
                         } else {
                             S.Shape.switchShape(S.ShapeBuilder.letter(index), true);
                         }
-                    }, 1000, value, true);
+                    }, 2000, value, true);
                     break;
 
                 case 'rectangle':
@@ -199,14 +199,14 @@ S.UI = (function () {
                                 time = t;
                                 S.Shape.switchShape(S.ShapeBuilder.letter(time));
                             }
-                        }, 1000);
+                        }, 2000);
                     }
                     break;
 
                 default:
                     S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? '手机虽好，可不要超时哦' : current));
             }
-        }, 1000, sequence.length);
+        }, 2000, sequence.length);
     }
 
     function checkInputWidth(e) {
