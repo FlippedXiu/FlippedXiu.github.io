@@ -204,7 +204,7 @@ S.UI = (function () {
                     break;
 
                 default:
-                    S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? '你小子不许多玩手机' : current));
+                    S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? '逮住玩手机' : current));
             }
         }, 2000, sequence.length);
     }
