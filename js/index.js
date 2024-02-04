@@ -24,7 +24,7 @@ var S = {
         if (i !== -1) {
             S.UI.simulate(decodeURI(action).substring(i + 3));
         } else {
-            S.UI.simulate('|#countdown 3||张|乐|言|生|日|快|乐|#re');
+            S.UI.simulate('|#countdown 3||杨|正|生|日|快|乐|#re');
         }
 
         S.Drawing.loop(function () {
@@ -204,7 +204,7 @@ S.UI = (function () {
                     break;
 
                 default:
-                    S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? '张乐言生日快乐' : current));
+                    S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? '手机虽好，可不要超时哦' : current));
             }
         }, 1000, sequence.length);
     }
