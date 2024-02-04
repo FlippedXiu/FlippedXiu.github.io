@@ -171,7 +171,7 @@ S.UI = (function () {
                         } else {
                             S.Shape.switchShape(S.ShapeBuilder.letter(index), true);
                         }
-                    }, 2000, value, true);
+                    }, 1800, value, true);
                     break;
 
                 case 'rectangle':
@@ -199,7 +199,7 @@ S.UI = (function () {
                                 time = t;
                                 S.Shape.switchShape(S.ShapeBuilder.letter(time));
                             }
-                        }, 2000);
+                        }, 1800);
                     }
                     break;
 
